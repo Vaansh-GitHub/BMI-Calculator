@@ -5,3 +5,5 @@
 
 
 Updates are Coming soon and you can also open source this project. Every Contribution is Welcomed !
+
+Visit via this vercel link - > https://bmi-calculator-red-rho.vercel.app/
