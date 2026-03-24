@@ -1,0 +1,78 @@
+html{
+    background-color: #070F2B;
+}
+.card{
+    background-color:#1B1A55;
+    margin:200px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:50%;
+    max-width:450px;
+    min-width: 300px;
+    padding:10px;
+    border-radius:20px;
+
+}
+.card > *{
+    margin:10px;
+    font-family:Arial Narrow,Arial, Helvetica, sans-serif;
+    border:none;
+    color:white;
+}
+.card > input{
+    background-color: #070537;
+    border-radius: 10px;
+    padding:10px;
+    min-width:50%;  
+    font-size:larger;
+    color-scheme: dark;
+}
+
+.card > input:-webkit-autofill,
+.card > input:-webkit-autofill:hover,
+.card > input:-webkit-autofill:focus,
+.card > input:-webkit-autofill:active {
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #070537 inset;
+    box-shadow: 0 0 0px 1000px #070537 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.card > button{
+    background-color: #2b25e7;
+    border-radius: 10px;
+    padding:10px;
+    width:fit-content; 
+    font-size:larger;  
+    cursor:pointer;
+}
+
+.card div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    gap:10px;
+    border-radius: 10px;
+    background-color: rgb(66, 66, 66);
+}
+
+.card div button{  
+    border-radius: 10px;
+    padding:10px;
+    width:50%; 
+    font-size:larger;  
+    cursor:pointer;
+    border: none;
+    transition: all 0.4s ease;
+}
+
+.selected{
+    background-color: aliceblue;
+    color:#1B1A55;
+}
+.unselected{
+    background-color: transparent;
+    color:white;
+}
