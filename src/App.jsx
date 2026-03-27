@@ -1,38 +1,42 @@
-
+import {useState} from "react";
 function App() {
-
+  let [bmi,setBmi]=useState(0.0);
+  let [health,setHealth]=useState("");
   const calculate = () => {
     const weight = document.getElementById("weight");
     const height = document.getElementById("height");
 
-    let bmi = Number(weight.value) * 10000 / Math.pow(Number(height.value), 2);
+    let cal=Number(weight.value) * 10000 / Math.pow(Number(height.value), 2);
+    const bmiValue = parseFloat(cal.toFixed(2));
+    setBmi(bmiValue);
+
     let gender=(document.getElementById("male").classList.contains("selected"))?"Male":"Female";
-    console.log(bmi);
+    
     console.log(gender);
 
-    if (bmi < 16) {
-      console.log("Severe Thinness");
+    if (bmiValue < 16) {
+      setHealth("Severe Thinness");
     }
-    else if (bmi < 17) {
-      console.log("Moderate Thinness")
+    else if (bmiValue < 17) {
+      setHealth("Moderate Thinness");
     }
-    else if (bmi < 18.5) {
-      console.log("Mild Thinness")
+    else if (bmiValue < 18.5) {
+      setHealth("Mild Thinness");
     }
-    else if (bmi < 25) {
-      console.log("Normal")
+    else if (bmiValue < 25) {
+      setHealth("Normal");
     }
-    else if (bmi < 30) {
-      console.log("Overweight")
+    else if (bmiValue < 30) {
+      setHealth("Overweight");
     }
-    else if (bmi < 35) {
-      console.log("Obese Class 1")
+    else if (bmiValue < 35) {
+      setHealth("Obese Class 1");
     }
-    else if (bmi < 40) {
-      console.log("Obese Class 2")
+    else if (bmiValue < 40) {
+      setHealth("Obese Class 2");
     }
     else {
-      console.log("Obese Class 3")
+      setHealth("Obese Class 3");
     }
   }
 
@@ -61,6 +65,8 @@ function App() {
         <input id="weight" type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Enter your Weight(in kg)" onInput={(e) => { e.target.value = e.target.value.replace(/\D/g, '') }}></input>
         <button onClick={() => calculate()}>Calculate</button>
       </div>
+      <p>{bmi?"BMI: "+bmi:""}</p>
+      <p>{health?health:""}</p>
     </>
   )
 }
